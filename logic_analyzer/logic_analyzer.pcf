@@ -5,12 +5,12 @@ set_io FSCTS 4
 set_io clk 21
 set_io LED 99
 
-set_io logic_input[0] 44
-set_io logic_input[1] 45
-set_io logic_input[2] 47
-set_io logic_input[3] 48
-set_io logic_input[4] 56
-set_io logic_input[5] 60
-set_io logic_input[6] 62
-set_io logic_input[7] 119
+set_io logic_input[0] 62
+set_io logic_input[1] 61
+set_io logic_input[2] 60
+set_io logic_input[3] 56
+set_io logic_input[4] 48
+set_io logic_input[5] 47
+set_io logic_input[6] 45
+set_io logic_input[7] 44
 

@@ -27,7 +27,7 @@ module program(
         .FILTER_RANGE(3'b001),
     ) uut (
         .REFERENCECLK   (clk),
-        .PLLOUTCORE     (clk_new), // output frequency = 3 * input frequency
+        .PLLOUTGLOBAL   (clk_new), // output frequency = 3 * input frequency
         .BYPASS         (BYPASS),
         .RESETB         (RESETB)
         //.LOCK (LOCK )

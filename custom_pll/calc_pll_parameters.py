@@ -15,9 +15,9 @@ PRESCALER_N_vals = range(0,32) # The 32 bit limit can be raised, it is just set 
 
 for DIVR in DIVR_vals:
     for DIVF in DIVF_vals:
-        for PRESCALER_N in PRESCALER_N_vals:
-            f_pllout = f_input*float(DIVF)/float(DIVR) # Equation from "iCE40 sysCLOCK PLL Design and Usage Guide", page 7
-            if f_pllout > 16e6 and f_pllout < 275e6: # Limits of the PLL output. See https://github.com/cliffordwolf/yosys/issues/107#issuecomment-162163626
+        f_pllout = f_input*float(DIVF)/float(DIVR) # Equation from "iCE40 sysCLOCK PLL Design and Usage Guide", page 7
+        if f_pllout > 16e6 and f_pllout < 275e6: # Limits of the PLL output. See https://github.com/cliffordwolf/yosys/issues/107#issuecomment-162163626
+            for PRESCALER_N in PRESCALER_N_vals:
                 fout = f_pllout/float(2**PRESCALER_N) # Prescaler equation from https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-5%3A-Prescaler-de-N-bits
                 error = abs(f_target-fout)
                 parameters.append([error,fout,(DIVR,DIVF,PRESCALER_N)])
